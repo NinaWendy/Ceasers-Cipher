@@ -9,4 +9,16 @@ public class EncodingTest {
         Character expected = 'D';
         assertEquals(expected, encoding.encryptCharacter('B'));
     }
+    @Test
+    public void encryptedCharacter_returnsCharAtPlusTwentyThreePosition() {
+        Encoding encoding= new Encoding();
+        Character expected = 'E';
+        assertEquals(expected, encoding.encryptCharacterPlusTwentyThree('H'));
+    }
+    @Test
+    public void encryptedCharacter_returnsCharAtPlusTenPosition() {
+        Encoding encoding= new Encoding();
+        Character expected = 'Y';
+        assertEquals(expected, encoding.encryptCharacterPlusTen('O'));
+    }
 }
