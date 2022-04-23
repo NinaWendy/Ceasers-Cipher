@@ -59,5 +59,25 @@ public class Encoding {
     public void setInput(String input) {
         this.input = input;
     }
-
+    public Character characterEncryption(char character) {
+        int position = Arrays.asList(alphabet).indexOf(character);
+        if (position + getMkey() >= alphabet.length) {
+            position = Math.abs(alphabet.length - position - getMkey());
+        } else {
+            position = position + getMkey();
+        }
+        return alphabet[position];
+    }
+    public String wordEncryption(String input){
+        char[] inputCharArray = input.toUpperCase().toCharArray();
+        StringBuilder encryptedWord= new StringBuilder();
+        for (char c : inputCharArray) {
+            if (Character.isLetter(c)) {
+                encryptedWord.append(characterEncryption(c));
+            } else {
+                encryptedWord.append(c);
+            }
+        }
+        return encryptedWord.toString();
+    }
 }
