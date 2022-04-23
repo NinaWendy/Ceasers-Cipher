@@ -6,13 +6,44 @@ public class Decoding {
             'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
             'Y', 'Z'};
 
-    public Character diciperCharacter(char c) {
+    public Character diciperCharacterMinusTwentyThree(char c) {
         int position = Arrays.asList(alphabet).indexOf(c);
-        if(position -2 >= alphabet.length){
-            position=Math.abs(alphabet.length -position+2);
+        int deShiftKey;
+        int shiftKey=23;
+
+        if (position-shiftKey < 0){
+            deShiftKey= position-shiftKey;
+            position=alphabet.length+deShiftKey;
         }else{
-            position=  position-2;
+            position=position-shiftKey;
+        }
+        return alphabet[position];
+    }
+    public Character diciperCharacterMinusTwo(char c) {
+        int position = Arrays.asList(alphabet).indexOf(c);
+        int deShiftKey;
+        int shiftKey=2;
+
+        if (position-shiftKey < 0){
+            deShiftKey= position-shiftKey;
+            position=alphabet.length+deShiftKey;
+        }else{
+            position=position-shiftKey;
+        }
+        return alphabet[position];
+    }
+    public Character diciperCharacterMinusFour(char c) {
+        int position = Arrays.asList(alphabet).indexOf(c);
+        int deShiftKey;
+        int shiftKey=4;
+
+        if (position-shiftKey < 0){
+            deShiftKey= position-shiftKey;
+            position=alphabet.length+deShiftKey;
+        }else{
+            position=position-shiftKey;
         }
         return alphabet[position];
     }
 }
+
