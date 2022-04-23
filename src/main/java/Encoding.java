@@ -41,4 +41,23 @@ public class Encoding {
         }
         return encryptedWord.toString();
     }
+    private int mkey;
+    private String input;
+
+    public int getMkey() {
+        return mkey;
+    }
+
+    public String getInput() {
+        return input;
+    }
+
+    public void setMkey(int mkey) {
+        this.mkey = mkey;
+    }
+
+    public void setInput(String input) {
+        this.input = input;
+    }
+
 }
