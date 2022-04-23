@@ -33,4 +33,12 @@ public class Encoding {
         }
         return alphabet[position];
     }
+    public String encryptWord(String word){
+        char[] wordCharArray = word.toUpperCase().toCharArray();
+        StringBuilder encryptedWord= new StringBuilder();
+        for (char c : wordCharArray) {
+            encryptedWord.append(encryptCharacter(c));
+        }
+        return encryptedWord.toString();
+    }
 }
