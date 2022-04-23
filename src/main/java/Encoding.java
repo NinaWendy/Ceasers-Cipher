@@ -15,4 +15,22 @@ public class Encoding {
         }
         return alphabet[position];
     }
+    public Character encryptCharacterPlusTwentyThree(char character){
+        int position = Arrays.asList(alphabet).indexOf(character);
+        if(position +23 >= alphabet.length){
+            position=Math.abs(alphabet.length -position-23);
+        }else{
+            position=  position+23;
+        }
+        return alphabet[position];
+    }
+    public Character encryptCharacterPlusTen(char character){
+        int position = Arrays.asList(alphabet).indexOf(character);
+        if(position +10 >= alphabet.length){
+            position=Math.abs(alphabet.length -position-10);
+        }else{
+            position=  position+10;
+        }
+        return alphabet[position];
+    }
 }
