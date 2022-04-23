@@ -7,6 +7,18 @@ public class DecodingTest {
     public void dicipheredCharacter_returnsPlainCharacterAtMinusTwo() {
         Decoding decoding=new Decoding();
         Character expected ='A';
-        assertEquals(expected, decoding.diciperCharacter('C'));
+        assertEquals(expected, decoding.diciperCharacterMinusTwo('C'));
+    }
+    @Test
+    public void dicipheredCharacter_returnsPlainCharacterAtMinusTwentyThree() {
+        Decoding decoding=new Decoding();
+        Character expected ='T';
+        assertEquals(expected, decoding.diciperCharacterMinusTwentyThree('Q'));
+    }
+    @Test
+    public void dicipheredCharacter_returnsPlainCharacterAtMinusFour() {
+        Decoding decoding=new Decoding();
+        Character expected ='X';
+        assertEquals(expected, decoding.diciperCharacterMinusFour('B'));
     }
 }
