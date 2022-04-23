@@ -21,4 +21,10 @@ public class EncodingTest {
         Character expected = 'Y';
         assertEquals(expected, encoding.encryptCharacterPlusTen('O'));
     }
+    @Test
+    public void encryptedWord_returnEncryptedWordEachLetterAtPlusTwoPosition() {
+        Encoding encoding= new Encoding();
+        String expected ="DQA";
+        assertEquals(expected, encoding.encryptWord("BOY"));
+    }
 }
