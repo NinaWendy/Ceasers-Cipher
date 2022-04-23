@@ -21,4 +21,16 @@ public class DecodingTest {
         Character expected ='X';
         assertEquals(expected, decoding.diciperCharacterMinusFour('B'));
     }
+    @Test
+    public void dicipherWord_returnsOriginalWord_BOY() {
+        Decoding decoding=new Decoding();
+        String expected="BOY";
+        assertEquals(expected, decoding.dicipheredWord("DQA"));
+    }
+    @Test
+    public void dicipherWord_returnsOriginalWord_QUICK() {
+        Decoding decoding=new Decoding();
+        String expected="QUICK";
+        assertEquals(expected, decoding.dicipherWord("NRFZH"));
+    }
 }
