@@ -61,5 +61,51 @@ public class Decoding {
         }
         return dicipherWord.toString();
     }
+    private int shiftkey;
+    private String encodedText;
+
+    public int getShiftkey() {
+        return shiftkey;
+    }
+
+    public void setShiftkey(int shiftkey) {
+        this.shiftkey = shiftkey;
+    }
+
+    public String getEncodedText() {
+        return encodedText;
+    }
+
+    public void setEncodedText(String encodedText) {
+        this.encodedText = encodedText;
+    }
+
+    public Character characterDecryption(char c) {
+        int position = Arrays.asList(alphabet).indexOf(c);
+        int deShiftKey;
+        int shiftKey = getShiftkey();
+
+        if (position - shiftKey < 0) {
+            deShiftKey = position - shiftKey;
+            position = alphabet.length + deShiftKey;
+        } else {
+            position = position - shiftKey;
+        }
+        return alphabet[position];
+
+    }
+
+    public String wordDecryption(String encodedText) {
+        char[] wordCharArray = encodedText.toUpperCase().toCharArray();
+        StringBuilder decryptedWord = new StringBuilder();
+        for (char c : wordCharArray) {
+            if (Character.isLetter(c)) {
+                decryptedWord.append(characterDecryption(c));
+            } else {
+                decryptedWord.append(c);
+            }
+        }
+        return decryptedWord.toString();
+    }
 }
 
