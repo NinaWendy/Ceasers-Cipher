@@ -45,5 +45,21 @@ public class Decoding {
         }
         return alphabet[position];
     }
+    public String dicipherWord(String word){
+        char[] wordCharArray = word.toUpperCase().toCharArray();
+        StringBuilder dicipherWord= new StringBuilder();
+        for (char c : wordCharArray) {
+            dicipherWord.append(diciperCharacterMinusTwentyThree(c));
+        }
+        return dicipherWord.toString();
+    }
+    public String dicipheredWord(String word){
+        char[] wordCharArray = word.toUpperCase().toCharArray();
+        StringBuilder dicipherWord= new StringBuilder();
+        for (char c : wordCharArray) {
+            dicipherWord.append(diciperCharacterMinusTwo(c));
+        }
+        return dicipherWord.toString();
+    }
 }
 
